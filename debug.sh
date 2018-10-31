@@ -7,7 +7,7 @@ if [ "$OS" = "Darwin" ]; then
 	HOST="docker.for.mac.host.internal"
 fi
 
-docker run -it \
+nvidia-docker run -it \
   --net=host \
   -e CROWDAI_REDIS_HOST=$HOST \
   -e CROWDAI_IS_GRADING=True \
