@@ -15,7 +15,7 @@ pip install crowdai-repo2docker
 ```
 * **Anaconda** (By following instructions [here](https://www.anaconda.com/download)) 
 * **osim-rl** (By following instructions [here](http://github.com/stanfordnmbl/osim-rl/))
-**IMPORTANT** : Please note that you will need `osim-rl` version `>=2.1.3` to be able to submit which you can update in your anaconda env by :
+**IMPORTANT** : Please note that you will need `osim-rl` version `>=2.1.4` to be able to submit which you can update in your anaconda env by :
 ```
 pip install -U osim-rl
 ```
