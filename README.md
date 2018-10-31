@@ -141,7 +141,7 @@ In the link above, you should start seeing something like this take shape (each 
 ![](https://i.imgur.com/Kc7M8zH.png)
 
 and if everything works out correctly, then you should be able to see the final scores like this : 
-![](blob:https://imgur.com/f77bbb3a-e0cb-4a4a-8f37-c9852dab0189)
+![](https://i.imgur.com/9RT2jFi.png)
 
 **Best of Luck** :tada: :tada:
 
