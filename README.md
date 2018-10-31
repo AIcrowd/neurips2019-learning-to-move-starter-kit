@@ -56,11 +56,12 @@ of your repository by doing :
 ```
 conda env export --no-build > environment.yml
 ```
+This `environment.yml` file will be used to recreate the `conda environment` inside the Docker container.
 This repository includes an example `environment.yml`
 
 # What should my code structure be like ?
 
-Please follow the structure documented in the included `run.py` to adapt 
+Please follow the structure documented in the included [run.py](https://github.com/crowdAI/nips2018-ai-for-prosthetics-round2-starter-kit/blob/master/run.py) to adapt 
 your already existing code to the required structure for this round.
 
 ## Important Concepts
@@ -73,7 +74,7 @@ your already existing code to the required structure for this round.
   "challenge_id" : "crowdai-marLo-2018",
   "grader_id" : "crowdai-marLo-2018",
   "authors" : ["your-crowdai-username"],
-  "description" : "sample description about your awesome marlo agent",
+  "description" : "sample description about your awesome agent",
   "license" : "MIT",
   "gpu":false
 }
