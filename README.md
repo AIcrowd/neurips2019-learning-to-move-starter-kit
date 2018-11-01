@@ -13,7 +13,7 @@ Participants will have to submit their code, with packaging specifications, and 
 ```sh
 pip install crowdai-repo2docker
 ```
-* **Anaconda** (By following instructions [here](https://www.anaconda.com/download)) 
+* **Anaconda** (By following instructions [here](https://www.anaconda.com/download)) At least version `4.5.11` is required to correctly populate `environment.yml`.
 * **osim-rl** (By following instructions [here](http://github.com/stanfordnmbl/osim-rl/))
 **IMPORTANT** : Please note that you will need `osim-rl` version `>=2.1.5` to be able to submit which you can update in your anaconda env by :
 ```
