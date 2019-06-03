@@ -1,8 +1,0 @@
-{
-    "challenge_id" : "ai-for-prosthetics-challenge-2018",
-    "grader_id": "ai-for-prosthetics-challenge-2018",
-    "authors" : ["spMohanty"],
-    "description" : "Random Agent for NIPS AI for Prosthetics Challenge.",
-    "gpu": false
-}
-

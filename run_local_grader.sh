@@ -10,5 +10,5 @@ docker run -it \
   --net=host \
   --name redis \
   -e ALLOW_EMPTY_PASSWORD=yes \
-  crowdaidocker/nips-ai-for-prosthetics-subcontractor \
-  /home/crowdai/run.sh
+  aicrowd/neurips-learning-to-move-subcontractor \
+  /home/aicrowd/run.sh

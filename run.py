@@ -21,14 +21,14 @@ pointing to the same redis server.
 Please ensure that `visualize=False`, else there might be unexpected errors 
 in your submission
 """
-env = ProstheticsEnv(visualize=False)
+env = L2M2019Env(visualize=False)
 
 """
 Define evaluator end point from Environment variables
 The grader will pass these env variables when evaluating
 """
-REMOTE_HOST = os.getenv("CROWDAI_EVALUATOR_HOST", "127.0.0.1")
-REMOTE_PORT = os.getenv("CROWDAI_EVALUATOR_PORT", 6379)
+REMOTE_HOST = os.getenv("AICROWD_EVALUATOR_HOST", "127.0.0.1")
+REMOTE_PORT = os.getenv("AICROWD_EVALUATOR_PORT", 6379)
 client = Client(
     remote_host=REMOTE_HOST,
     remote_port=REMOTE_PORT

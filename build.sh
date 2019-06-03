@@ -3,8 +3,8 @@
 ARGS=$1
 
 
-crowdai-repo2docker --no-run \
+aicrowd-repo2docker --no-run \
   --user-id 1001 \
-  --user-name crowdai \
+  --user-name aicrowd \
   --image-name ${IMAGE_NAME} \
   --debug .

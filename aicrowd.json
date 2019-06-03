@@ -1,0 +1,7 @@
+{
+  "challenge_id": "learning_to_walk_2019",
+  "grader_id": "learning_to_walk_2019",
+  "authors": ["mohanty"],
+  "description": "Random Agent for NeurIPS 2019 : Learning to Move - Walk Around.",
+  "gpu": false
+}
