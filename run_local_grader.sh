@@ -8,7 +8,7 @@ fi
 
 docker run -it \
   --net=host \
-  --name redis \
+  --name evaluator \
   -e ALLOW_EMPTY_PASSWORD=yes \
   aicrowd/neurips-learning-to-move-subcontractor \
   /home/aicrowd/run.sh
