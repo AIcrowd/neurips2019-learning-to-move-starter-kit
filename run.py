@@ -12,7 +12,7 @@ import os
 NOTE: For testing your submission scripts, you first need to ensure 
 that redis-server is running in the background
 and you can locally run the grading service by running this script : 
-https://github.com/crowdAI/osim-rl/blob/master/osim/redis/service.py
+https://github.com/stanfordnmbl/osim-rl//blob/master/osim/redis/service.py
 The client and the grading service communicate with each other by 
 pointing to the same redis server.
 """
