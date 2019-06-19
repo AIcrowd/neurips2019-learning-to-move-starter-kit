@@ -6,7 +6,7 @@
 
 ###
 
-In the [NeurIPS 2019: Learning to Move - Walk Around Challenge](https://www.aicrowd.com/challenges/neurips-2019-learning-to-move-walk-around) we ask you to submit the code of the controller you built. The grader server will build a docker container from your repository, run it and evaluate it on `L2M2019Env` environment with `difficulty=1` and a series of random seeds for **N** episodes.
+In the [NeurIPS 2019: Learning to Move - Walk Around Challenge](https://www.aicrowd.com/challenges/neurips-2019-learning-to-move-walk-around) we ask you to submit the code of the controller you built. The grader server will build a docker container from your repository, run it and evaluate it on `L2M2019Env` environment with `difficulty=2` and a series of random seeds for **N** episodes.
 
 First, we show how to submit the most basic controller. Next, we explain how to add your own controller. Finally, we present how to debug your submission by running the docker locally.
 
