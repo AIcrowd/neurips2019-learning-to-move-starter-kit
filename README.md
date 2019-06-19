@@ -17,11 +17,11 @@ Follow these simple steps:
 1. Sign-up to AICrowd here https://www.aicrowd.com/participants/sign_in (use github or sign up at the bottom). Let’s say your username is `aicrowd-username`
 2. Create a private repository at https://gitlab.aicrowd.com/. Let's call it `neurips2019-learn-to-move`
 3. Create an SSH key on your local machine and add it to crowdAI gitlab as described here https://docs.gitlab.com/ee/ssh/README.html#generating-a-new-ssh-key-pair
-4. Run the following bash commands:
+4. Run the following bash commands (replace **[aicrowd-username]** with your actual username):
 ```sh
 git clone https://github.com/AIcrowd/neurips2019-learning-to-move-starter-kit.git neurips2019-learn-to-move
 cd neurips2019-learn-to-move
-git remote add aicrowd git@gitlab.aicrowd.com:<aicrowd-username>/learn-to-walk-test-2.git
+git remote add aicrowd git@gitlab.aicrowd.com:[aicrowd-username]/neurips2019-learn-to-move.git
 git tag -am "submission-v0.1" submission-v0.1
 git push aicrowd master
 git push aicrowd submission-v0.1
