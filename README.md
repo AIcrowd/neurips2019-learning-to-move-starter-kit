@@ -18,7 +18,7 @@ Follow these simple steps:
 2. Create a private repository at https://gitlab.aicrowd.com/. Let’s call it neurips2019-learn-to-move
 3. Create an SSH key on your local machine and add it to crowdAI gitlab as described here https://docs.gitlab.com/ee/ssh/README.html#generating-a-new-ssh-key-pair
 4. Run the following bash commands:
-```bash
+```sh
 git clone https://github.com/AIcrowd/neurips2019-learning-to-move-starter-kit.git neurips2019-learn-to-move
 cd neurips2019-learn-to-move
 git remote add aicrowd git@gitlab.aicrowd.com:<aicrowd-username>/learn-to-walk-test-2.git
@@ -42,40 +42,31 @@ The grader will create a docker environment with your solution and you are free 
 
 You will find more details below.
 
-### Minimal setup
+### Buliding your controller
 
-For building your environment locally, you will need
+For building your controller follow the tutorial [here](https://github.com/stanfordnmbl/osim-rl/blob/master/README.md) and the materials [here](http://osim-rl.stanford.edu/). In the tutorial here, we only describe how to submit the controller to the chalalenge. In particular, we assume that:
+* You've already set up a conda environment (say `opensim-rl` as in [the tutorial](https://github.com/stanfordnmbl/osim-rl/blob/master/README.md))
+* You've already built some controller and you have it in your code somewhere as `my_controller` function.
 
-- **Anaconda** (By following instructions [here](https://www.anaconda.com/download)) At least version `4.5.11` is required to correctly populate `environment.yml`.
-- **osim-rl** (By following instructions [here](http://github.com/stanfordnmbl/osim-rl/))
-  **IMPORTANT**: Please note that you will need `osim-rl` version `>=3.0.2` to be able to submit which you can update in your anaconda env by:
-
-```
-pip install -U osim-rl
-```
-# How do I specify my software runtime?
-
-In your submission the software runtime is specified by exporting your `conda` env to the root. You can do that by running:
-
+To submit your controller, you will simply need to:
+* Go to `neurips2019-learn-to-move` directory that you created above
+* Export your conda environment 
 ```
 conda env export --no-build > environment.yml
 ```
+* Copy your code to `neurips2019-learn-to-move` and integrate your `my_controller` function into the [run.py](https://github.com/AIcrowd/neurips2019-learning-to-move-starter-kit/blob/master/run.py#L48) script.
 
-This `environment.yml` file will be used to recreate the `conda environment` inside the Docker container in the grader on the server.
-This repository includes an example `environment.yml`
+The `environment.yml` file will be used to recreate the `conda environment` inside the Docker container in the grader on the server. This repository includes an example `environment.yml`.
 
-- **Your code specific dependencies**
+### My specific code dependecies
 
+In your conda environment you can install any dependencies you need simply by runnyng `conda install` or `pip install`. For example, you can install pytorch
 ```sh
-# If say you want to install PyTorch
 conda install pytorch torchvision -c pytorch
 ```
-
-### Clone repository
-
-```
-git clone git@github.com:AIcrowd/neurips2019-learning-to-move-starter-kit.git
-cd neurips2019-learning-to-move-starter-kit
+or open cv
+```sh
+pip install opencv-python
 ```
 
 ### Debugging setup
