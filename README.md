@@ -202,4 +202,7 @@ and if everything works out correctly, then you should be able to see the final 
 # Author
 
 Sharada Mohanty <https://twitter.com/MeMohanty>
+
+Seungmoon Song <https://github.com/smsong>
+
 Łukasz Kidziński <https://twitter.com/kidzik>
