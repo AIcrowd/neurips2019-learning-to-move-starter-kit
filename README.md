@@ -42,9 +42,9 @@ The grader will create a docker environment with your solution and you are free 
 
 You will find more details below.
 
-### Buliding your controller
+### Creating the controller
 
-For building your controller follow the tutorial [here](https://github.com/stanfordnmbl/osim-rl/blob/master/README.md) and the materials [here](http://osim-rl.stanford.edu/). In the tutorial here, we only describe how to submit the controller to the chalalenge. In particular, we assume that:
+For creating your controller follow the steps [here](https://github.com/stanfordnmbl/osim-rl/blob/master/README.md) and the materials [here](http://osim-rl.stanford.edu/). In this repository, we only describe how to submit an already existing controller to the grader. In particular, we assume that:
 * You've already set up a conda environment (say `opensim-rl` as in [the tutorial](https://github.com/stanfordnmbl/osim-rl/blob/master/README.md))
 * You've already built some controller and you have it in your code somewhere as `my_controller` function.
 
@@ -52,55 +52,22 @@ To submit your controller, you will simply need to:
 * Go to `neurips2019-learn-to-move` directory that you created above
 * Export your conda environment 
 ```
+source activate opensim-rl
 conda env export --no-build > environment.yml
 ```
 * Copy your code to `neurips2019-learn-to-move` and integrate your `my_controller` function into the [run.py](https://github.com/AIcrowd/neurips2019-learning-to-move-starter-kit/blob/master/run.py#L48) script.
 
 The `environment.yml` file will be used to recreate the `conda environment` inside the Docker container in the grader on the server. This repository includes an example `environment.yml`.
 
-### My specific code dependecies
+### Specific code dependecies
 
-In your conda environment you can install any dependencies you need simply by runnyng `conda install` or `pip install`. For example, you can install pytorch
+In your conda environment you can install anything you need simply by runnyng `conda install` or `pip install`. For example, you can install pytorch
 ```sh
 conda install pytorch torchvision -c pytorch
 ```
-or open cv
+or opencv
 ```sh
 pip install opencv-python
-```
-
-### Debugging setup
-
-For debugging the submission locally, you will need
-
-- **docker** : By following the instructions [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-- **nvidia-docker** : By following the instructions [here](<https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)>)
-- **aicrowd-repo2docker**
-
-```sh
-pip install aicrowd-repo2docker
-```
-
-### Test Submission Locally
-
-You can reproduce our grader environment on your local machine running the following scripts
-
-```
-cd neurips2019-learn-to-move
-export IMAGE_NAME="learning-to-move-agent"
-
-# Build docker image for your submission
-./build.sh
-
-# In a separate tab : run redis server
-./run_redis.sh
-
-# In a separate tab : run local grader
-./run_local_grader.sh
-
-# In a separate tab :
-# Finally, run your agent locally by :
-./debug.sh
 ```
 
 # More details on how should you structure your code
@@ -198,6 +165,40 @@ and if everything works out correctly, then you should be able to see the final 
 ![](https://i.imgur.com/9RT2jFi.png)
 
 **Best of Luck** :tada: :tada:
+
+### Debugging setup
+
+For debugging the submission locally, you will need
+
+- **docker** : By following the instructions [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+- **nvidia-docker** : By following the instructions [here](<https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)>)
+- **aicrowd-repo2docker**
+
+```sh
+pip install aicrowd-repo2docker
+```
+
+### Test Submission Locally
+
+You can reproduce our grader environment on your local machine running the following scripts
+
+```
+cd neurips2019-learn-to-move
+export IMAGE_NAME="learning-to-move-agent"
+
+# Build docker image for your submission
+./build.sh
+
+# In a separate tab : run redis server
+./run_redis.sh
+
+# In a separate tab : run local grader
+./run_local_grader.sh
+
+# In a separate tab :
+# Finally, run your agent locally by :
+./debug.sh
+```
 
 # Author
 
