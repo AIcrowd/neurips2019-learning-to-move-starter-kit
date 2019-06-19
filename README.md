@@ -1,18 +1,19 @@
 ![AIcrowd-Logo](https://raw.githubusercontent.com/AIcrowd/AIcrowd/master/app/assets/images/misc/aicrowd-horizontal.png)
 
-# NeurIPS 2019 : Learning to Move - Walk Around Starter Kit
+# NeurIPS 2019: Learning to Move - Walk Around Starter Kit
 
 [![gitter-badge](https://badges.gitter.im/crowdAI/NIPS-Learning-To-Run-Challenge.png)](https://gitter.im/crowdAI/NIPS-Learning-To-Run-Challenge)
 
 ###
 
-Instructions to make submissions to the [NeurIPS 2019 : Learning to Move - Walk Around Challenge](https://www.aicrowd.com/challenges/neurips-2019-learning-to-move-walk-around).
+In the [NeurIPS 2019: Learning to Move - Walk Around Challenge](https://www.aicrowd.com/challenges/neurips-2019-learning-to-move-walk-around) we ask you to submit the code of the controller you built. The grader server will build a docker container from your repository, run it and evaluate it with `L2M2019Env` with `difficulty=1` and a series of random seeds for **N** episodes.
 
-Participants will have to submit their code, with packaging specifications, and the evaluator will automatically build a docker image and execute their agent against the `L2M2019Env` with `difficulty=1` and a series of random seeds for **N** episodes.
+First, we show how to submit the most basic controller. Next, we explain how to add your own controller. Finally, we present how to debug your submission by running the docker locally.
 
-### Executive summary
+### Getting started
 
-We recommend you first submit a test controller (random actions). Follow these simple steps:
+In order to get acquainted with our system, we recommend you first submit a test controller (random actions).
+Follow these simple steps:
 1. Sign-up to AICrowd here https://www.aicrowd.com/participants/sign_in (use github or sign up at the bottom). Let’s say your username is aicrowd-username
 2. Create a private repository at https://gitlab.aicrowd.com/. Let’s call it neurips2019-learn-to-move
 3. Create an SSH key on your local machine and add it to crowdAI gitlab as described here https://docs.gitlab.com/ee/ssh/README.html#generating-a-new-ssh-key-pair
@@ -41,23 +42,27 @@ The grader will create a docker environment with your solution and you are free 
 
 You will find more details below.
 
-### Setup
+### Minimal setup
 
-- **docker** : By following the instructions [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-- **nvidia-docker** : By following the instructions [here](<https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)>)
-- **aicrowd-repo2docker**
-
-```sh
-pip install aicrowd-repo2docker
-```
+For building your environment locally, you will need
 
 - **Anaconda** (By following instructions [here](https://www.anaconda.com/download)) At least version `4.5.11` is required to correctly populate `environment.yml`.
 - **osim-rl** (By following instructions [here](http://github.com/stanfordnmbl/osim-rl/))
-  **IMPORTANT** : Please note that you will need `osim-rl` version `>=3.0.1` to be able to submit which you can update in your anaconda env by :
+  **IMPORTANT**: Please note that you will need `osim-rl` version `>=3.0.2` to be able to submit which you can update in your anaconda env by:
 
 ```
 pip install -U osim-rl
 ```
+# How do I specify my software runtime?
+
+In your submission the software runtime is specified by exporting your `conda` env to the root. You can do that by running:
+
+```
+conda env export --no-build > environment.yml
+```
+
+This `environment.yml` file will be used to recreate the `conda environment` inside the Docker container in the grader on the server.
+This repository includes an example `environment.yml`
 
 - **Your code specific dependencies**
 
@@ -71,6 +76,18 @@ conda install pytorch torchvision -c pytorch
 ```
 git clone git@github.com:AIcrowd/neurips2019-learning-to-move-starter-kit.git
 cd neurips2019-learning-to-move-starter-kit
+```
+
+### Debugging setup
+
+For debugging the submission locally, you will need
+
+- **docker** : By following the instructions [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+- **nvidia-docker** : By following the instructions [here](<https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)>)
+- **aicrowd-repo2docker**
+
+```sh
+pip install aicrowd-repo2docker
 ```
 
 ### Test Submission Locally
@@ -92,18 +109,6 @@ export IMAGE_NAME="learning-to-move-agent"
 # Finally, run your agent locally by :
 ./debug.sh
 ```
-
-# How do I specify my software runtime ?
-
-The software runtime is specified by exporting your `conda` env to the root
-of your repository by doing :
-
-```
-conda env export --no-build > environment.yml
-```
-
-This `environment.yml` file will be used to recreate the `conda environment` inside the Docker container.
-This repository includes an example `environment.yml`
 
 # What should my code structure be like ?
 
