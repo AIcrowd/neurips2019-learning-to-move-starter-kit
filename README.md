@@ -4,9 +4,42 @@
 
 [![gitter-badge](https://badges.gitter.im/crowdAI/NIPS-Learning-To-Run-Challenge.png)](https://gitter.im/crowdAI/NIPS-Learning-To-Run-Challenge)
 
+###
+
 Instructions to make submissions to the [NeurIPS 2019 : Learning to Move - Walk Around Challenge](https://www.aicrowd.com/challenges/neurips-2019-learning-to-move-walk-around).
 
 Participants will have to submit their code, with packaging specifications, and the evaluator will automatically build a docker image and execute their agent against the `L2M2019Env` with `difficulty=1` and a series of random seeds for **N** episodes.
+
+### Executive summary
+
+We recommend you first submit a test controller (random actions). Follow these simple steps:
+1. Sign-up to AICrowd here https://www.aicrowd.com/participants/sign_in (use github or sign up at the bottom). Let’s say your username is aicrowd-username
+2. Create a private repository at https://gitlab.aicrowd.com/. Let’s call it neurips2019-learn-to-move
+3. Create an SSH key on your local machine and add it to crowdAI gitlab as described here https://docs.gitlab.com/ee/ssh/README.html#generating-a-new-ssh-key-pair
+4. Run the following bash commands:
+```bash
+git clone https://github.com/AIcrowd/neurips2019-learning-to-move-starter-kit.git neurips2019-learn-to-move
+cd neurips2019-learn-to-move
+git remote add aicrowd git@gitlab.aicrowd.com:<aicrowd-username>/learn-to-walk-test-2.git
+git tag -am "submission-v0.1" submission-v0.1
+git push aicrowd master
+git push aicrowd submission-v0.1
+```
+
+The code above will:
+1. Clone the submission repository repository
+2. Add your private gitlab.aicrowd.com repository as a remote
+3. Tag the repository with submission-X where X can be anything
+4. Push the repository and the tag
+
+Each tagged commit is treated as a submission and evaluated by the grader.
+
+The actual controller you are submitting is in the run.py file — this file is executed by the grader. You can simply replace the random controller [here](https://github.com/AIcrowd/neurips2019-learning-to-move-starter-kit/blob/master/run.py#L48)
+with your controller (a function from states to actions).
+
+The grader will create a docker environment with your solution and you are free to use any library available on ubuntu.
+
+You will find more details below.
 
 ### Setup
 
