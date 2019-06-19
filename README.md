@@ -83,8 +83,10 @@ pip install aicrowd-repo2docker
 
 ### Test Submission Locally
 
+You can reproduce our grader environment on your local machine running the following scripts
+
 ```
-cd neurips2019-learning-to-move-starter-kit
+cd neurips2019-learn-to-move
 export IMAGE_NAME="learning-to-move-agent"
 
 # Build docker image for your submission
@@ -101,7 +103,7 @@ export IMAGE_NAME="learning-to-move-agent"
 ./debug.sh
 ```
 
-# What should my code structure be like ?
+# More details on how should you structure your code
 
 Please follow the structure documented in the included [run.py](https://github.com/AIcrowd/neurips2019-learning-to-move-starter-kit/blob/master/run.py) to adapt
 your already existing code to the required structure for this round.
@@ -111,7 +113,7 @@ your already existing code to the required structure for this round.
 ### Repository Structure
 
 - `aicrowd.json`
-  Each repository should have a `aicrowd.json` with the following content :
+  Each repository should have a `aicrowd.json` with the following content:
 
 ```json
 {
@@ -145,7 +147,7 @@ conda env export --no-build > environment.yml
 
 ### Debugging the packaged software environment
 
-If you have issues with your submission because of your software environment and dependencies, you can debug them, by first building the docker image, and then getting a shell inside the image by :
+If you have issues with your submission because of your software environment and dependencies, you can debug them, by first building the docker image, and then getting a shell inside the image by:
 
 ```
 nvidia-docker run --net=host -it $IMAGE_NAME /bin/bash
@@ -167,7 +169,7 @@ If you do not have SSH Keys, you will first need to [generate one](https://docs.
 
 Then you can create a submission by making a _tag push_ to your repository on [https://gitlab.aicrowd.com/](https://gitlab.aicrowd.com/).
 **Any tag push (where the tag name begins with "submission-") to your private repository is considered as a submission**  
-Then you can add the correct git remote, and finally submit by doing :
+Then you can add the correct git remote, and finally submit by doing:
 
 ```
 cd neurips2019-learning-to-move-starter-kit
@@ -184,7 +186,7 @@ git push aicrowd submission-v0.1
 # then pushing a new tag will **not** trigger a new evaluation.
 ```
 
-You now should be able to see the details of your submission at :
+You now should be able to see the details of your submission at:
 [gitlab.aicrowd.com//<YOUR_AICROWD_USER_NAME>/neurips2019-learning-to-move-starter-kit/issues](gitlab.aicrowd.com//<YOUR_AICROWD_USER_NAME>/neurips2019-learning-to-move-starter-kit/issues)
 
 **NOTE**: Remember to update your username in the link above :wink:
@@ -192,7 +194,7 @@ You now should be able to see the details of your submission at :
 In the link above, you should start seeing something like this take shape (each of the steps can take a bit of time, so please be patient too :wink: ) :
 ![](https://i.imgur.com/Kc7M8zH.png)
 
-and if everything works out correctly, then you should be able to see the final scores like this :
+and if everything works out correctly, then you should be able to see the final scores like this:
 ![](https://i.imgur.com/9RT2jFi.png)
 
 **Best of Luck** :tada: :tada:
