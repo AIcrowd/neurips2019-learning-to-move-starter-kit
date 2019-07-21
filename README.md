@@ -91,13 +91,16 @@ your already existing code to the required structure for this round.
   "authors": ["your-aicrowd-username"],
   "description": "sample description about your awesome agent",
   "license": "MIT",
-  "gpu": false
+  "gpu": false,
+  "debug" : false  
 }
 ```
 
 This is used to map your submission to the said challenge, so please remember to use the correct `challenge_id` and `grader_id` as specified above.
 
 Please specify if your code will a GPU or not for the evaluation of your model. If you specify `true` for the GPU, a **NVIDIA Tesla K80 GPU** will be provided and used for the evaluation.
+
+If you set `debug` to `true`, then the evaluation will run on a separate set of 3 seeds, and the logs from your submitted code (if it fails), will be made available to you to help you debug.
 
 ### Packaging of your software environment
 
